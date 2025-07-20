@@ -1,8 +1,8 @@
-have you ever been super annoyed at how Bandcamp encodes it's flac metadata by default? no? well I have, so I fixed it
+for the longest time I dealt with the bad encoding that Bandcamp has and it was really annoying. so I'm finally trying to fix it
 
 #### don't programs like mp3tag or puddletag let you automate actions to do this anyway?  
 uhhh yes I think so, but shh I was bored and wanted to make something.  
-also I want to add optional opus encoding so that will be unique when that's out  
+also I want to add optional opus encoding so that will be unique when that's out!!  
 
 #### isn't zig super overkill for this?  
 I just enjoy writing zig code :3
@@ -15,7 +15,7 @@ for every track in your collection!
 
 ### INSTALLATION
 requires metaflac https://xiph.org/flac/documentation_tools_metaflac.html  
-just download the release binary for your OS/architecture
+currently you have to build from source but I'll compile release versions at some point
 
 ### BUILD FROM SOURCE
 use version 0.14.1 of the Zig Compiler <add link>  
