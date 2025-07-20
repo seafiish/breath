@@ -14,15 +14,15 @@ b) replaces UNSYNCEDLYRICS tag with LYRICS for better compatability
 for every track in your collection!
 
 ### INSTALLATION
-requires metaflac https://xiph.org/flac/documentation_tools_metaflac.html
+requires metaflac https://xiph.org/flac/documentation_tools_metaflac.html  
 just download the release binary for your OS/architecture
 
 ### BUILD FROM SOURCE
-use version 0.14.1 of the Zig Compiler <add link>
+use version 0.14.1 of the Zig Compiler <add link>  
 just clone and zig build
 
 ```
-  git clone <insert link>
+  git clone https://github.com/seafiish/breath.git
   cd breath
   zig build
 ```
@@ -31,8 +31,8 @@ just clone and zig build
 download music in .flac from bandcamp in the same folder as the binary and run it
 
 ### TODO
-figure out whether or not the bandcamp embedded cover encoding is correct or not
-test if this works on windows, figure out how to test if this works on mac
+figure out whether or not the bandcamp embedded cover encoding is correct or not  
+test if this works on windows, figure out how to test if this works on mac  
 
-add real opus encoding (!)
+add real opus encoding (!)  
 maybe add support for other encoding as well, need to figure out how good/bad bandcamp's encoding tools are for the formats they do offer
