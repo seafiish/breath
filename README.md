@@ -1,10 +1,10 @@
 have you ever been super annoyed at how Bandcamp encodes it's flac metadata by default? no? well I have, so I fixed it
 
-don't programs like mp3tag or puddletag let you automate actions to do this anyway?  
+#### don't programs like mp3tag or puddletag let you automate actions to do this anyway?  
 uhhh yes I think so, but shh I was bored and wanted to make something.  
 also I want to add optional opus encoding so that will be unique when that's out  
 
-isn't zig super overkill for this?  
+#### isn't zig super overkill for this?  
 I just enjoy writing zig code :3
 
 ### FEATURES
