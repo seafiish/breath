@@ -20,6 +20,7 @@ fn returnTag(tag: []const u8, file: []const u8) ![]u8 {
     child.stdout_behavior = .Pipe;
     try child.spawn();
 
+    // trim off the prefix "TAGNAME=" and trailing newline that metaflac outputs with --show-tag
     const reader = child.stdout.?.reader();
     var stdout = try reader.readAllAlloc(allocator, 4096);
 
@@ -63,7 +64,6 @@ pub fn main() !void {
         const path = file.path;
         if (file.kind != .file) continue;
         if (!std.mem.endsWith(u8, file.basename, ".flac")) continue;
-        // std.debug.print("file Name: {s}\n", .{file.basename});
 
         if ((try returnTag("UNSYNCEDLYRICS", path)).len != 0) {
             if ((try returnTag("LYRICS", path)).len == 0) {
@@ -71,15 +71,15 @@ pub fn main() !void {
                 std.debug.print("added LYRICS tag to {s}\n", .{path});
             }
             try useMetaflac("--remove-tag=UNSYNCEDLYRICS", path);
-            // std.debug.print("removed UNSYNCEDLYRICS tag from {s}\n", .{path});
+            std.debug.print("removed UNSYNCEDLYRICS tag from {s}\n", .{path});
         }
         if ((try returnTag("ALBUM", path)).len == 0) {
             try setTag("ALBUM", try returnTag("TITLE", path), path);
-            // std.debug.print("added ALBUM tag to {s}\n", .{path});
+            std.debug.print("added ALBUM tag to {s}\n", .{path});
         }
         if ((try returnTag("ALBUMARTIST", path)).len == 0) {
             try setTag("ALBUMARTIST", try returnTag("ARTIST", path), path);
-            // std.debug.print("added ALBUMARTIST tag to {s}\n", .{path});
+            std.debug.print("added ALBUMARTIST tag to {s}\n", .{path});
         }
     }
 }
